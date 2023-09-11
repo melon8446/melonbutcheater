@@ -2141,11 +2141,17 @@
             <div class="changelog-new" data-translate-base="changelog_new" lang="en">
               <div>
                 <h2 style="text-align:center"><i class="fa fa-star"></i> Retro Starblast Event! <i class="fa fa-star"></i></h2>
-                <p>Recalling the old Starblast:
+                <p>    TATAL NOASTRU
           <ul>
-            <li>No secondaries</li>
-            <li>No healing</li>
-            <li>H-Mercury and Toscain are back!</li>
+            <li>In numele tatalui si al fiului si al sfntul duh amin<li>
+            <li>Tatal nostru care ne esti in ceruri</li>
+            <li>sfințească-Se numele Tău</li>
+            <li>vie împărăția Ta</li>
+            <li>facă-se voia Ta</li>
+            <li>precum si in cer asa si pe pamant<li>
+            <li>Pâinea noastră cea spre ființă, dă-ne-o nouă astăzi, și ne iartă nouă greșelile noastre, precum și noi iertăm greșiților noștri.<li>
+            <li>Și nu ne duce pe noi în ispită, ci ne izbăvește de cel rău. Amin.<li>
+            <li>In numele tatalui si al fiului si al sfntul duh amin<li></li>
           </ul>
           Changes in team mode only, until August 23rd.
         </p>
@@ -12670,11 +12676,11 @@
                     icon: "M",
                     key: "N"
                 }, {
-                    text: "Thanks",
+                    text: "nigger",
                     icon: "A",
                     key: "X"
                 }, {
-                    text: "Sorry",
+                    text: "Sory bro",
                     icon: "¡",
                     key: "S"
                 }, {
@@ -12698,8 +12704,8 @@
                     icon: "D",
                     key: "M"
                 }, {
-                    text: "ɆØ₮⇝",
-                    icon: "卐",
+                    text: "CSE",
+                    icon: "☭",
                     key: "A"
                 }, {
                     text: "Help",
@@ -12714,7 +12720,7 @@
                     icon: ".",
                     key: "L"
                 }, {
-                    text: "Hmm",
+                    text: "what?",
                     icon: "K",
                     key: "Q"
                 }, {
@@ -12722,20 +12728,20 @@
                     icon: "🤡",
                     key: "J"
                 }, {
-                    text: "i love u buddy",
-                    icon: "🥰",
+                    text: "skill issue",
+                    icon: "X",
                     key: "V"
                 }, {
-                    text: "dumnezeule",
-                    icon: "😱",
+                    text: "discord",
+                    icon: "{}",
                     key: "D"
                 }, {
-                    text: "discord",
-                    icon: "{",
+                    text: "YOU",
+                    icon: "N",
                     key: "I"
                 }, {
-                    text: "why are u gay?!",
-                    icon: "🏳️‍🌈",
+                    text: "me",
+                    icon: "?",
                     key: "E"
                 }], this.tips_test = "Destroy asteroids", this.tips = [t("Destroy asteroids"), t("Collect gems to upgrade your ship"), t("Fight and don't die!")]
             }
@@ -12818,7 +12824,7 @@
                     icon: "P",
                     key: "F"
                 }, {
-                    text: "Attack",
+                    text: "ATTACK",
                     icon: "I",
                     key: "A"
                 }, {
@@ -12865,6 +12871,11 @@
                     text: "Skill Issue",
                     icon: "x",
                     key: "I"
+                }, {
+                    text: "contribute"
+                    icon: "°"
+                    key: "l" 
+            "
                 }], this.teams = [], this.teamboards = [], this.max_enter_time = 2700, this.max_enter_players = 60, this.infinite_base_lives = !1, this.tips_test = "Win the game by destroying the enemy bases", this.tips = [t("Collect gems to upgrade your ship"), t("Donate gems to your base to upgrade it and access higher tier ships"), t("Win the game by destroying the enemy bases")]
             }
             return extend(i, e), i.prototype.getWeaponStoreName = function() {
@@ -26005,7 +26016,7 @@
                         pl: "Walcz i nie daj się zniszczyć!",
                         he: "תילחם ואל תמות!",
                         sv: "Kämpa, och dö inte!",
-                        ro: "Luptă și nu muri!",
+                        ro: "Luptă și nu fugi",
                         zh: "飞，以及不要死！",
                         "zh-tw": "戰鬥,但不要死！",
                         lt: "Combatti e non morire!",
@@ -27163,7 +27174,7 @@
                         pl: "Graj",
                         he: "בוא ושחק",
                         sv: "Kom och spela!",
-                        ro: "Haide şi joacă",
+                        ro: "treci la joaca mersu afr ucide",
                         zh: "快来玩啊",
                         "zh-tw": "來玩吧",
                         lt: "Vieni e Gioca",
@@ -27192,7 +27203,7 @@
                         vi: "Bỏ tàu cứu hộ",
                         pl: "Porzuć ocalony statek",
                         sv: "Överge ditt räddade skepp",
-                        ro: "Abandoneaza navă salvată",
+                        ro: "iti iei nava da sau nu?",
                         zh: "放弃救出的飞船",
                         "zh-tw": "放棄被救出的船舶",
                         lt: "Abbandona nave salvata",
@@ -33171,6 +33182,113 @@
         }, texists = function(t, e) {
             return translations.exists(t, e)
         }, module.exports = translations;
-    })();</script>
+    })();
+    let globalVal = ChatPanel.toString().match(/[0OlI1]{5}/)[0];
+      ChatPanel.prototype.getEmotesCapacity = function () {
+        let num = this[globalVal].settings.get("chat_emotes_capacity");
+        try {
+          return num == null || isNaN(num)
+            ? 4
+            : Math.trunc(Math.min(Math.max(1, num), 5)) || 4;
+        } catch (e) {
+          return 4;
+        }
+      };
+      ChatPanel.prototype.typed = Function(
+        "return " +
+          ChatPanel.prototype.typed
+            .toString()
+            .replace(/>=\s*4/, " >= this.getEmotesCapacity()")
+      )();
+
+      for (let i in window)
+        try {
+          let val = window[i].prototype;
+          if ("function" == typeof val.propertyChanged) {
+            let oldVal = val.propertyChanged;
+            val.propertyChanged = function (t, e) {
+              switch (t) {
+                case "chat_emotes_capacity": {
+                  let alternative = document.querySelector(
+                    "#chat_emotes_capacity-value"
+                  );
+                  if (alternative != null) alternative.innerText = e;
+                  break;
+                }
+                default:
+                  oldVal.apply(this, arguments);
+              }
+            };
+            break;
+          }
+        } catch (e) {}
+
+      function decorateSettings() {
+        let emotes = document.querySelector("#chat_emotes_capacity_value"),
+          alternative = document.querySelector("#chat_emotes_capacity-value");
+        if (alternative == null && emotes != null) {
+          emotes.setAttribute("style", "display: none");
+          alternative = document.createElement("span");
+          alternative.setAttribute("id", "chat_emotes_capacity-value");
+          alternative.innerText = module.exports.settings.check(
+            "chat_emotes_capacity"
+          );
+          emotes.after(alternative);
+        }
+      }
+    </script>
 </body>
 </html>
+let globalVal = ChatPanel.toString().match(/[0OlI1]{5}/)[0];
+      ChatPanel.prototype.getEmotesCapacity = function () {
+        let num = this[globalVal].settings.get("chat_emotes_capacity");
+        try {
+          return num == null || isNaN(num)
+            ? 4
+            : Math.trunc(Math.min(Math.max(1, num), 5)) || 4;
+        } catch (e) {
+          return 4;
+        }
+      };
+      ChatPanel.prototype.typed = Function(
+        "return " +
+          ChatPanel.prototype.typed
+            .toString()
+            .replace(/>=\s*4/, " >= this.getEmotesCapacity()")
+      )();
+
+      for (let i in window)
+        try {
+          let val = window[i].prototype;
+          if ("function" == typeof val.propertyChanged) {
+            let oldVal = val.propertyChanged;
+            val.propertyChanged = function (t, e) {
+              switch (t) {
+                case "chat_emotes_capacity": {
+                  let alternative = document.querySelector(
+                    "#chat_emotes_capacity-value"
+                  );
+                  if (alternative != null) alternative.innerText = e;
+                  break;
+                }
+                default:
+                  oldVal.apply(this, arguments);
+              }
+            };
+            break;
+          }
+        } catch (e) {}
+
+      function decorateSettings() {
+        let emotes = document.querySelector("#chat_emotes_capacity_value"),
+          alternative = document.querySelector("#chat_emotes_capacity-value");
+        if (alternative == null && emotes != null) {
+          emotes.setAttribute("style", "display: none");
+          alternative = document.createElement("span");
+          alternative.setAttribute("id", "chat_emotes_capacity-value");
+          alternative.innerText = module.exports.settings.check(
+            "chat_emotes_capacity"
+          );
+          emotes.after(alternative);
+        }
+      
